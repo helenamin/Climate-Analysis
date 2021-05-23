@@ -116,12 +116,9 @@ def tobs_start_date(start):
     #Return a JSON list of the minimum temperature, the average temperature, and the max temperature for a given start
     #When given the start only, calculate TMIN, TAVG, and TMAX for all dates greater than and equal to the start date
     start_date = dt.datetime.strptime(start,"%Y-%m-%d")
-
-    last_datapoint_date = session.query(Measurement.date).order_by(Measurement.date.desc()).first()
-    end_date = last_datapoint_date[0]
-    
+   
     result = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
-        filter(Measurement.date >= start_date).filter(Measurement.date <= end_date).all()
+        filter(Measurement.date >= start_date).all()
 
     session.close()
 
@@ -131,6 +128,7 @@ def tobs_start_date(start):
         calc_tob['TMIN'] = tmin
         calc_tob['TAVG'] = tavg
         calc_tob['TMAX'] = tmax
+        calc_tobs_list.append(calc_tob)
     
     return jsonify(calc_tobs_list)
 
@@ -156,6 +154,7 @@ def tobs_date_range(start,end):
         calc_tob['TMIN'] = tmin
         calc_tob['TAVG'] = tavg
         calc_tob['TMAX'] = tmax
+        calc_tobs_list.append(calc_tob)
     
     return jsonify(calc_tobs_list)
 
