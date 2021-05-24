@@ -14,7 +14,7 @@ To begin, I used Python and SQLAlchemy to do basic climate analysis and data exp
 
 * This one is a query to retrieve the last 12 months of precipitation data. The query is loaded to a Panadas DataFrame. Then using the DataFrame results, a plot has been created and a the summary statistics also has been added for the precipitation data
 
-    ![precipitation](Image/precipitation.png)
+    ![precipitation](image/precipitation.png)
 
 ### Station Analysis
 
@@ -34,7 +34,7 @@ This one contains some other queries:
 
   * Then it plots the results as a histogram with `bins=12`.
 
-    ![station-histogram](Image/station-histogram.png)
+    ![station-histogram](image/station-histogram.png)
 
 - - -
 
@@ -81,7 +81,7 @@ Atfer the initial analysis, I designed a Flask API based on the queries that I h
 
 ### Temperature Analysis I
 * Hawaii is reputed to enjoy mild weather all year. In this exercise we are trying to test if there is a meaningful difference between the temperature in June and December in Hawaii.
-I ran unpaired ttest to check if there is any significant the difference is significant or not. Null hypothesis says that there is no difference between Average Temperatures in June and Dec in Hawaii but the p-value is tremendously less than 5% which means we can reject the null hypthesis. Therefore Temperatures in June and Dec in Hawaii are statistically significant.
+As the data of these two months are two independent or unrelated groups, I chose unpaired ttest to run. in this case, the Null hypothesis says that there is no difference between Average Temperatures in June and Dec in Hawaii but the p-value is tremendously less than 5% which means we can reject the null hypthesis. Therefore Temperatures in June and Dec in Hawaii are statistically significant.
 
 ### Temperature Analysis II
 
@@ -95,7 +95,7 @@ I ran unpaired ttest to check if there is any significant the difference is sign
 
   * Then used the peak-to-peak (TMAX-TMIN) value as the y error bar (YERR).
 
-    ![temperature](Image/temperature.png)
+    ![temperature](image/temperature.png)
 
 ### Daily Rainfall Average
 
@@ -111,5 +111,5 @@ I ran unpaired ttest to check if there is any significant the difference is sign
 
 * Then Pandas is used to plot an area plot (`stacked=False`) for the daily normals.
 
-  ![daily-normals](Image/daily-normals.png)
+  ![daily-normals](image/daily-normals.png)
 
