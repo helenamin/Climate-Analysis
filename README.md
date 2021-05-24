@@ -79,6 +79,10 @@ Atfer the initial analysis, I designed a Flask API based on the queries that I h
 
 ## Bonus: Other Recommended Analyses
 
+### Temperature Analysis I
+* Hawaii is reputed to enjoy mild weather all year. In this exercise we are trying to test if there is a meaningful difference between the temperature in June and December in Hawaii.
+I ran unpaired ttest to check if there is any significant the difference is significant or not. Null hypothesis says that there is no difference between Average Temperatures in June and Dec in Hawaii but the p-value is tremendously less than 5% which means we can reject the null hypthesis. Therefore Temperatures in June and Dec in Hawaii are statistically significant.
+
 ### Temperature Analysis II
 
 * The starter notebook contains a function called `calc_temps` that will accept a start date and end date in the format `%Y-%m-%d`. The function will return the minimum, average, and maximum temperatures for that range of dates.
